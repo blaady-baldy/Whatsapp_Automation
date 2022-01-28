@@ -1,9 +1,11 @@
 from cgitb import text
+import imp
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from example import return_path
 from time import sleep
 
 class attach_media:
@@ -15,7 +17,8 @@ class attach_media:
 
         driver.get('https://web.whatsapp.com')
 
-        media_path = input("Enter the file path for the media file to be attached : ")
+        # media_path = input("Enter the file path for the media file to be attached : ")
+        media_path = return_path("media_filepath")
         
         count = 0
         input("Press ENTER after login into Whatsapp Web and your chats are visiable.")

@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from example import return_path
 from time import sleep
 
 class attach_message:
@@ -14,7 +15,7 @@ class attach_message:
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get('https://web.whatsapp.com')
 
-        text_path = input("Enter the file path for the text file that contains the message to be sent : ")
+        text_path = return_path("message_filepath")
         text_file = open(text_path, "r")
         message = text_file.read()
         text_file.close()

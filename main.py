@@ -2,6 +2,7 @@ from ast import Num
 from attach_message import attach_message
 from attach_pdf import attach_pdf
 from attach_media import attach_media
+from example import return_path
 import pandas
 
 def Main():
@@ -16,7 +17,7 @@ def Main():
     print("5. Message with attached pdf")
     choice = int(input())
 
-    excel_path = input("Enter the path of the excel file where list of contacts is stored : ")
+    excel_path = return_path("excel_filepath")
     excel_data = pandas.read_excel(excel_path, sheet_name='Recipients')
 
     if choice==1:
