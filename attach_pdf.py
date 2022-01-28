@@ -8,9 +8,10 @@ from example import return_path
 from time import sleep
 
 class attach_pdf:
-    def __init__(self, excel_data):
+    def __init__(self, excel_data,contact_column):
 
         self.excel_data = excel_data
+        self.contact_column = contact_column
 
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get('https://web.whatsapp.com')
@@ -18,11 +19,11 @@ class attach_pdf:
         pdf_path = return_path("pdf_filepath")
         
         count = 0
-        input("Press ENTER after login into Whatsapp Web and your chats are visiable.")
+        # input("Press ENTER after login into Whatsapp Web and your chats are visiable.")
 
         for column in excel_data['Contact'].tolist():
             try:
-                url = 'https://web.whatsapp.com/send?phone=' + str(excel_data['Contact'][count]) 
+                url = 'https://web.whatsapp.com/send?phone=' + str(excel_data[contact_column][count]) 
                 sent = False
 
                 # It tries 3 times to send a message in case if there any error occurred
@@ -44,17 +45,17 @@ class attach_pdf:
                     
 
                 except Exception as e:
-                    print("Sorry message could not sent to " + str(excel_data['Contact'][count]))
+                    print("Sorry message could not sent to " + str(excel_data[contact_column][count]))
                 else:
                     # click_btn.click()
                     send_button.click()
                     sent = True
-                    sleep(2)
-                    print('Pdf file sent to: ' + str(excel_data['Contact'][count]))
+                    # sleep(2)
+                    print('Pdf file sent to: ' + str(excel_data[contact_column][count]))
 
                 count = count + 1
                 
             except Exception as e:
-                print('Failed to send pdf file to ' + str(excel_data['Contact'][count]) + str(e))
+                print('Failed to send pdf file to ' + str(excel_data[contact_column][count]) + str(e))
         driver.quit()
         print("The script executed successfully.")
