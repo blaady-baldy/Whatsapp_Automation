@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from example import return_path
+from fetch_number import fetch_number
 from time import sleep
 
 class attach_media:
@@ -21,11 +22,12 @@ class attach_media:
         
         count = 0
 
-        # input("Press ENTER after login into Whatsapp Web and your chats are visiable.")
-
-        for column in excel_data['Contact'].tolist():
+        for column in excel_data[contact_column].tolist():
             try:
-                url = 'https://web.whatsapp.com/send?phone=' + str(excel_data[contact_column][count]) 
+                number = str(excel_data[contact_column][count]) 
+                num = fetch_number(number)
+
+                url = 'https://web.whatsapp.com/send?phone=' + num 
                 sent = False
 
                 sleep(2)
@@ -43,17 +45,17 @@ class attach_media:
                     send_button = driver.find_element(By.XPATH, '//div[@class="_165_h _2HL9j"]')
 
                 except Exception as e:
-                    print("Sorry message could not sent to " + str(excel_data[contact_column][count]))
+                    print("Sorry media file could not be sent to : " + num)
                 else:
                     send_button.click()
                     sent = True
-                    # sleep(2)
-                    print('Media file sent to: ' + str(excel_data[contact_column][count]))
+                    sleep(2)
+                    print('Media file sent to: ' + num)
 
                 count = count + 1
                 
             except Exception as e:
-                print('Failed to send media file to ' + str(excel_data[contact_column][count]) + str(e))
+                print('Failed to send media file to ' + num + str(e))
                 sleep(5)
         driver.quit()
         print("The script executed successfully.")

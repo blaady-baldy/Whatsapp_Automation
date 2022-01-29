@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from example import return_path
 from time import sleep
+from fetch_number import fetch_number
 
 class attach_pdf:
     def __init__(self, excel_data,contact_column):
@@ -19,11 +20,13 @@ class attach_pdf:
         pdf_path = return_path("pdf_filepath")
         
         count = 0
-        # input("Press ENTER after login into Whatsapp Web and your chats are visiable.")
 
-        for column in excel_data['Contact'].tolist():
+        for column in excel_data[contact_column].tolist():
             try:
-                url = 'https://web.whatsapp.com/send?phone=' + str(excel_data[contact_column][count]) 
+                number = str(excel_data[contact_column][count])
+                num = fetch_number(number)
+
+                url = 'https://web.whatsapp.com/send?phone=' + num
                 sent = False
 
                 # It tries 3 times to send a message in case if there any error occurred
@@ -45,17 +48,17 @@ class attach_pdf:
                     
 
                 except Exception as e:
-                    print("Sorry message could not sent to " + str(excel_data[contact_column][count]))
+                    print("Sorry pdf file could not be sent to " + num)
                 else:
                     # click_btn.click()
                     send_button.click()
                     sent = True
-                    # sleep(2)
-                    print('Pdf file sent to: ' + str(excel_data[contact_column][count]))
+                    sleep(2)
+                    print('Pdf file sent to: ' + num)
 
                 count = count + 1
                 
             except Exception as e:
-                print('Failed to send pdf file to ' + str(excel_data[contact_column][count]) + str(e))
+                print('Failed to send pdf file to ' + num + str(e))
         driver.quit()
         print("The script executed successfully.")

@@ -1,7 +1,7 @@
 # class return_path:
 def return_path(path):
 
-    text_file = open("D:\python\og automated whatsapp web prog\Whatsapp_Text_Only\details.txt", "r")
+    text_file = open("details.txt", "r")
     message = text_file.read().split("\n")
         # print(message)
 
