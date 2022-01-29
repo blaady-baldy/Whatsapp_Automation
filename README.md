@@ -46,7 +46,7 @@ is copy the paths in this file for the program to access it.
 INSTALLATION
 ------------
 
-Install the Whatsapp Automation module by foring or cloning the project in your 
+Install the Whatsapp Automation module by forking or cloning the project in your 
 system
 
 
