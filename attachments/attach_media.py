@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from example import return_path
-from fetch_number import fetch_number
+from attachments.fetch_number import fetch_number
 from time import sleep
 
 class attach_media:

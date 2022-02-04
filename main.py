@@ -1,8 +1,8 @@
 from ast import Num
 from logging import exception
-from attach_message import attach_message
-from attach_pdf import attach_pdf
-from attach_media import attach_media
+from attachments.attach_media import attach_media
+from attachments.attach_message import attach_message
+from attachments.attach_pdf import attach_pdf
 # from script import execute
 from example import return_path
 import pandas

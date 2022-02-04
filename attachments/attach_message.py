@@ -6,7 +6,8 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from example import return_path
 from time import sleep
-from fetch_number import fetch_number
+from attachments.fetch_number import fetch_number
+import pandas
 import os
 
 class attach_message:
@@ -15,6 +16,8 @@ class attach_message:
         self.excel_data = excel_data
         self.name_column = name_column
         self.contact_column = contact_column
+
+        # print(excel_data[contact_column][1])
 
         print("Do you want to include name in message to be sent ? (0 - NO / 1 - Yes)")
         isName = int(input("Choice : "))
@@ -43,7 +46,7 @@ class attach_message:
                 url = 'https://web.whatsapp.com/send?phone=' + num + '&text=' + name
                 sent = False
 
-                sleep(2)
+                sleep(3)
 
                 driver.get(url)
 
@@ -54,11 +57,11 @@ class attach_message:
                 except Exception as e:
                     print("Sorry message could not sent to " + num)
                 else:
-                    sleep(2)
-                    # click_btn.click()
+                    sleep(3)
+
                     click_btn.click()
                     sent = True
-                    # sleep(2)
+                    sleep(3)
                     print('Message sent to: ' + num)
                     count = count + 1
                 
