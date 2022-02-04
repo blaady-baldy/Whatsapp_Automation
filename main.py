@@ -1,8 +1,9 @@
 from ast import Num
 from logging import exception
-from attach_message import attach_message
-from attach_pdf import attach_pdf
-from attach_media import attach_media
+from attachments.attach_message import attach_message
+from attachments.attach_pdf import attach_pdf
+from attachments.attach_media import attach_media
+from attachments.attach_message_with_pdf import attach_message_with_pdf
 # from script import execute
 from example import return_path
 import pandas
@@ -42,8 +43,7 @@ def Main():
         attach_message(excel_data,name_column,contact_column)
         attach_media(excel_data,contact_column)
     elif choice==5:
-        attach_message(excel_data,name_column,contact_column)
-        attach_pdf(excel_data,contact_column)
+        attach_message_with_pdf(excel_data,name_column,contact_column)
     else:
         print("\nWrong choice\nExiting..........\n")
 if __name__ == "__main__":

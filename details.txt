@@ -1,15 +1,15 @@
 sample_path = C:\Users\sample_path
 
-media_filepath = 
+media_filepath = D:\python\Whatsapp_Text_Only/akriti.png
 
-pdf_filepath = 
+pdf_filepath = D:\python\Tapan Bhaiya\blank.pdf
 
-message_filepath = 
+message_filepath = D:\python\og automated whatsapp web prog\Whatsapp_Text_Only\text_file.txt
 
-excel_filepath = 
+excel_filepath = D:\python\og automated whatsapp web prog\Whatsapp_Text_Only\Recipients data.xlsx
 
-excel_filename = 
+excel_filename = Recipients
 
-column_name_of_contacts = 
+column_name_of_contacts = Contact
 
-column_name_of_names_stored = 
+column_name_of_names_stored = Name

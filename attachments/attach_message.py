@@ -59,7 +59,7 @@ class attach_message:
                     click_btn.click()
                     sent = True
                     # sleep(2)
-                    print('Message sent to: ' + num)
+                    print(str(count+1) + '. Message sent to: ' + num)
                     count = count + 1
                 
             except Exception as e:
