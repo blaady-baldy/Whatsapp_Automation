@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from example import return_path
 from time import sleep
-from fetch_number import fetch_number
+from attachments.fetch_number import fetch_number
 
 class attach_pdf:
     def __init__(self, excel_data,contact_column):
@@ -30,7 +30,7 @@ class attach_pdf:
                 sent = False
 
                 # It tries 3 times to send a message in case if there any error occurred
-                sleep(2)
+                sleep(3)
 
                 driver.get(url)
                 try:
@@ -42,7 +42,7 @@ class attach_pdf:
                     pdf_box = driver.find_element(By.XPATH,'//input[@accept="*"]')
                     pdf_box.send_keys(pdf_path)
                     
-                    sleep(2)
+                    sleep(3)
                     send_button = driver.find_element(By.XPATH, '//div[@class="_165_h _2HL9j"]')
                     # send_button.click()
                     
@@ -53,7 +53,7 @@ class attach_pdf:
                     # click_btn.click()
                     send_button.click()
                     sent = True
-                    sleep(2)
+                    sleep(3)
                     print('Pdf file sent to: ' + num)
 
                 count = count + 1
