@@ -38,8 +38,8 @@ class attach_media:
                         EC.element_to_be_clickable((By.XPATH, '//div[@title="Attach"]')))
                     click_btn.click()
 
-                    pdf_box = driver.find_element(By.XPATH,'//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]')
-                    pdf_box.send_keys(media_path)
+                    media_box = driver.find_element(By.XPATH,'//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]')
+                    media_box.send_keys(media_path)
 
                     sleep(2)
                     send_button = driver.find_element(By.XPATH, '//div[@class="_165_h _2HL9j"]')

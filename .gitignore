@@ -1,4 +1,7 @@
+*.pyc
+*.pyo
 
 details.txt
 Recipients data.xlsx
+
 

@@ -4,6 +4,8 @@ from attachments.attach_message import attach_message
 from attachments.attach_pdf import attach_pdf
 from attachments.attach_media import attach_media
 from attachments.attach_message_with_pdf import attach_message_with_pdf
+from attachments.attach_message_with_media import attach_message_with_media
+from attachments.fetch_number import fetch_number
 # from script import execute
 from example import return_path
 import pandas
@@ -40,8 +42,7 @@ def Main():
     elif choice==3:
         attach_pdf(excel_data,contact_column)
     elif choice==4:
-        attach_message(excel_data,name_column,contact_column)
-        attach_media(excel_data,contact_column)
+        attach_message_with_media(excel_data,name_column,contact_column)
     elif choice==5:
         attach_message_with_pdf(excel_data,name_column,contact_column)
     else:

@@ -9,7 +9,7 @@ from time import sleep
 from attachments.fetch_number import fetch_number
 import os
 
-class attach_message_with_pdf:
+class attach_message_with_media:
     def __init__(self, excel_data,name_column,contact_column):
 
         self.excel_data = excel_data
@@ -21,7 +21,7 @@ class attach_message_with_pdf:
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get('https://web.whatsapp.com')
 
-        pdf_path = return_path("pdf_filepath")
+        media_path = return_path("media_filepath")
 
         count = 0
 
@@ -45,32 +45,29 @@ class attach_message_with_pdf:
                 url = 'https://web.whatsapp.com/send?phone=' + num + '&text=' + name
                 sent = False
 
-                sleep(2)
-
                 driver.get(url)
 
                 sleep(2)
+
 
                 try:
                     click_btn = WebDriverWait(driver, 35).until(
                         EC.element_to_be_clickable((By.XPATH, '//div[@title="Attach"]')))
                     click_btn.click()
 
-                    media_box = driver.find_element(By.XPATH,'//input[@accept="*"]')
-                    media_box.send_keys(pdf_path)
+                    media_box = driver.find_element(By.XPATH,'//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]')
+                    media_box.send_keys(media_path)
 
                     sleep(2)
                     send_button = driver.find_element(By.XPATH, '//div[@class="_165_h _2HL9j"]')
 
                 except Exception as e:
-                    print("Sorry pdf file could not be sent to : " + num)
+                    print("Sorry media file could not be sent to : " + num)
                 else:
                     send_button.click()
-                    msg_btn = driver.find_element(By.CLASS_NAME, '_4sWnG')
-                    msg_btn.click()
                     sent = True
                     sleep(2)
-                    print('Pdf file sent to: ' + num)
+                    print('Media file sent to: ' + num)
                     count = count + 1
                 
             except Exception as e:
