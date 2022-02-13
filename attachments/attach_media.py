@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-from example import return_path
+from attachments.example import return_path
 from attachments.fetch_number import fetch_number
 from time import sleep
 
@@ -50,7 +50,7 @@ class attach_media:
                     send_button.click()
                     sent = True
                     sleep(2)
-                    print('Media file sent to: ' + num)
+                    print(str(count+1) + '. Media file sent to: ' + num)
 
                 count = count + 1
                 

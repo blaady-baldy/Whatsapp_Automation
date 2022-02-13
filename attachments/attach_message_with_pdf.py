@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-from example import return_path
+from attachments.example import return_path
 from time import sleep
 from attachments.fetch_number import fetch_number
 import os
@@ -41,14 +41,10 @@ class attach_message_with_pdf:
                 number = str(excel_data[contact_column][count])
                 num = fetch_number(number)
 
-
                 url = 'https://web.whatsapp.com/send?phone=' + num + '&text=' + name
                 sent = False
 
-                sleep(2)
-
                 driver.get(url)
-
                 sleep(2)
 
                 try:
@@ -69,8 +65,8 @@ class attach_message_with_pdf:
                     msg_btn = driver.find_element(By.CLASS_NAME, '_4sWnG')
                     msg_btn.click()
                     sent = True
-                    sleep(2)
-                    print('Pdf file sent to: ' + num)
+                    sleep(4)
+                    print(str(count+1) + '. Pdf file sent to: ' + num)
                     count = count + 1
                 
             except Exception as e:

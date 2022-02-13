@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-from example import return_path
+from attachments.example import return_path
 from time import sleep
 from attachments.fetch_number import fetch_number
 import pandas
@@ -46,7 +46,7 @@ class attach_message:
                 url = 'https://web.whatsapp.com/send?phone=' + num + '&text=' + name
                 sent = False
 
-                sleep(3)
+                sleep(2)
 
                 driver.get(url)
 
@@ -62,7 +62,7 @@ class attach_message:
                     click_btn.click()
                     sent = True
                     sleep(3)
-                    print('Message sent to: ' + num)
+                    print(str(count+1) + '. Message sent to: ' + num)
                     count = count + 1
                 
             except Exception as e:

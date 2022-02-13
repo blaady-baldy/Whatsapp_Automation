@@ -6,8 +6,7 @@ from attachments.attach_media import attach_media
 from attachments.attach_message_with_pdf import attach_message_with_pdf
 from attachments.attach_message_with_media import attach_message_with_media
 from attachments.fetch_number import fetch_number
-# from script import execute
-from example import return_path
+from attachments.example import return_path
 import pandas
 
 def Main():
