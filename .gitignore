@@ -1,7 +1,7 @@
 *.pyc
 *.pyo
 
-details.txt
-Recipients data.xlsx
+*.xlsx
+details1.txt
 
 
