@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>WhatsApp Automation</title>
+</head>
+<body>
+    <div class="jumbotron container">
+    <h1>Whatsapp Automation</h1>
+    <h2>What action do you want to perform</h2>
+    <div class="grid">
+        <form action="/options" method="POST">
+            <input class="btn btn-danger" type="radio" name="options" id="option1" value="1"> Attach Message </input><br>
+            <input class="btn btn-primary" type="radio" name="options" id="option2" value="2"> Attach Media File </input><br>
+            <input class="btn btn-primary" type="radio" name="options" id="option3" value="3"> Attach PDF File </input><br>
+            <input class="btn btn-primary" type="radio" name="options" id="option4" value="4"> Attach Message with Media File </input><br>
+            <input class="btn btn-primary" type="radio" name="options" id="option5" value="5"> Attach Message with PDF File </input><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+      </div>
+    </div>
+</html>

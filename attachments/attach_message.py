@@ -7,8 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from attachments.example import return_path
 from time import sleep
 from attachments.fetch_number import fetch_number
-import pandas
-import os
+# from pandas import *
+# import os
 
 class attach_message:
     def __init__(self, excel_data,name_column,contact_column):
