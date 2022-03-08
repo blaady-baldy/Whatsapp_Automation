@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Horizontal form</h2>
+  <form class="form-horizontal" action="/form" method ='POST'>
+    {% if choice in [1,4,5] %}
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="message">Message : </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="message" placeholder="Enter message" name="message">
+      </div>
+    </div>
+    {% endif %}
+    {% if choice in [3,5] %}
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="attach_pdf">Filepath of PDF : </label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="attach_pdf" placeholder="Enter Filepath of PDF " name="attach_pdf">
+      </div>
+    </div>
+    {% endif %}
+    {% if choice in [2,4] %}
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="attach_media">Filepath of Media File :</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="attach_media" placeholder="Enter Filepath of Media File" name="attach_media">
+        </div>
+      </div>
+    {% endif %}
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="excel_file">Filepath of Excel File : </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="excel_file" placeholder="Enter Filepath of Excel File : " name="excel_file">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="worksheet_name">Worksheet Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="worksheet_name" placeholder="Enter Worksheet Name : " name="worksheet_name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="contact_name">Column name of Contacts stored in Excel</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="contact_name" placeholder="Enter Column name of Contacts : " name="contact_name">
+        </div>
+      </div>
+      {% if choice_for_name==1 %}
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name_name">Column name of Client names stored in Excel</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name_name" placeholder="Enter Column name of Client names : " name="name_name">
+        </div>
+      </div>
+      {% endif %}
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+

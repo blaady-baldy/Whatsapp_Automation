@@ -29,31 +29,71 @@ REQUIREMENTS
 ------------
 
 This module requires Python 3 to be installed in your system.
-For this module to function you need a "details.txt" in the same folder where the 
-main.py file exists that will run the program.
-This details.txt file stores all the details about all the data to be sent or
-attached.
-All you need to do is open this file and copy the paths of all the files that 
-contain the data in the details.txt file.
 
-The paths have to be copied in such a way : 
-sample_path = C:\Users\Python\Whatsapp Automation\main.py
+1. To check if Python is installed in your system :
 
-For the user, the names of the paths have been provided and all you need to do
-is copy the paths in this file for the program to access it.
+        python --version
+
+    * Then you should see something like this :
+
+          Python 3.9.1
+    
+    * If not installed, go to https://www.python.org/downloads/ 
+
+2. Then verify if pip was installed successfully:
+
+          pip -V
+
+    * Then you should see something like this :
+
+          pip 20.2.3 from c:\python39\lib\site-packages\pip (python 3.9)
+
+* Another thing that is required is stable internet connection with speed of 1mbps.
 
 
 INSTALLATION
 ------------
 
-Install the Whatsapp Automation module by forking or cloning the project in your 
-system
+1. Install the Whatsapp Automation module by forking or cloning the project in your 
+system by running the following command : 
 
+        git clone https://github.com/blaady-baldy/Whatsapp_Automation.git
+
+2. Install virtualenv using pip (if not already installed): 
+
+        pip install virtualenv
+
+3. Run the following command in the terminal :
+
+        virtualenv env
+
+    * Change the directory to the folder where you have cloned the repo and run :
+
+          .\env\Scripts\activate
+
+    * then you should see something like :
+
+          (env) PS D:\python\
+
+
+4. Install all dependencies by running the following command :
+
+        pip install -r requirements.txt
+
+5. Then to run the program run the following command in the terminal in the cloned repo :
+
+        python app.py
+
+6. To decativate the virtual environment and use your original Python environment, simply type ‘deactivate’ :
+
+        deactivate
 
 
 MAINTAINERS
 -----------
 
  * Devansh Singh - blaadybaldy@gmail.com
+
+ 
 
 
