@@ -37,6 +37,8 @@ This module requires Python 3 to be installed in your system.
     * Then you should see something like this :
 
           Python 3.9.1
+    
+    * If not installed, go to https://www.python.org/downloads/ 
 
 2. Then verify if pip was installed successfully:
 
@@ -52,17 +54,16 @@ This module requires Python 3 to be installed in your system.
 INSTALLATION
 ------------
 
-Install the Whatsapp Automation module by forking or cloning the project in your 
-system.
+1. Install the Whatsapp Automation module by forking or cloning the project in your 
+system by running the following command : 
 
-Then follow the following steps :
+        git clone https://github.com/blaady-baldy/Whatsapp_Automation.git
 
-
-1. Install virtualenv using pip : 
+2. Install virtualenv using pip (if not already installed): 
 
         pip install virtualenv
 
-2. Run the following command in the terminal :
+3. Run the following command in the terminal :
 
         virtualenv env
 
@@ -75,15 +76,15 @@ Then follow the following steps :
           (env) PS D:\python\
 
 
-3. Install all dependencies by running the following command :
+4. Install all dependencies by running the following command :
 
-        pip install requirements.txt
+        pip install -r requirements.txt
 
-4. Then to run the program run the following command in the terminal in the cloned repo :
+5. Then to run the program run the following command in the terminal in the cloned repo :
 
         python app.py
 
-5. To decativate the virtual environment and use your original Python environment, simply type ‘deactivate’ :
+6. To decativate the virtual environment and use your original Python environment, simply type ‘deactivate’ :
 
         deactivate
 
