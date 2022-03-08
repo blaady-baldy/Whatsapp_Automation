@@ -9,7 +9,7 @@ from attachments.fetch_number import fetch_number
 from attachments.example import return_path
 import pandas
 
-def Main(choice):
+def Main(choice,choice_for_name):
     
     
     # print("\n"+"*"*50+"Menu"+"*"*50)
@@ -35,15 +35,15 @@ def Main(choice):
     # execute(choice, excel_data)
     
     if choice==1:
-        attach_message(excel_data,name_column,contact_column)
+        attach_message(excel_data,name_column,contact_column,choice_for_name)
     elif choice==2:
         attach_media(excel_data,contact_column)
     elif choice==3:
         attach_pdf(excel_data,contact_column)
     elif choice==4:
-        attach_message_with_media(excel_data,name_column,contact_column)
+        attach_message_with_media(excel_data,name_column,contact_column,choice_for_name)
     elif choice==5:
-        attach_message_with_pdf(excel_data,name_column,contact_column)
+        attach_message_with_pdf(excel_data,name_column,contact_column,choice_for_name)
     else:
         print("\nWrong choice\nExiting..........\n")
 # if __name__ == "__main__":

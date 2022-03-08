@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Name Form</h2>
+  <form action="/options" method="POST">
+      <div>Do you want the message to be personalised ?</div>
+    <input class="btn btn-primary" type="radio" name="choices" id="option2" value="0"> No </input><br>
+    <input class="btn btn-danger" type="radio" name="choices" id="option1" value="1"> Yes </input><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div>Important Instruction : 
+      Where you want to include name put : ($name$)
+      For example : Hi ($name$), Hope you are doing well
+    </div>
+</div>
+
+
+</body>
+</html>

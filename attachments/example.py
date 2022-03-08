@@ -1,7 +1,7 @@
 # class return_path:
 def return_path(path):
 
-    text_file = open("details1.txt", "r")
+    text_file = open("details.txt", "r")
     message = text_file.read().split("\n")
         # print(message)
 

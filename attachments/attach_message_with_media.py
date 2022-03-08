@@ -10,14 +10,14 @@ from attachments.fetch_number import fetch_number
 import os
 
 class attach_message_with_media:
-    def __init__(self, excel_data,name_column,contact_column):
+    def __init__(self, excel_data,name_column,contact_column,choice_for_name):
 
         self.excel_data = excel_data
         self.name_column = name_column
         self.contact_column = contact_column
+        self.choice_for_name = choice_for_name
+        isName = choice_for_name
 
-        print("Do you want to include name in message to be sent ? (0 - NO / 1 - Yes)")
-        isName = int(input("Choice : "))
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.get('https://web.whatsapp.com')
 
@@ -25,11 +25,7 @@ class attach_message_with_media:
 
         count = 0
 
-        text_path = return_path("message_filepath")
-        text_file = open(text_path, "r")
-        message = text_file.read()
-        text_file.close()
-        
+        message = return_path('message')
 
         for column in excel_data[contact_column].tolist():
             try:
