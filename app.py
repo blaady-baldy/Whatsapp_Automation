@@ -1,5 +1,3 @@
-from json.tool import main
-from lib2to3.pgen2 import driver
 from webbrowser import get, open_new
 from threading import Timer
 from flask import Flask, render_template, request, redirect, url_for
