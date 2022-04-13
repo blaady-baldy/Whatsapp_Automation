@@ -6,21 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
     <title>WhatsApp Automation</title>
 </head>
 <body>
     <div class="jumbotron container">
-    <h1>Whatsapp Automation</h1>
-    <h2>What action do you want to perform</h2>
-    <div class="grid">
+      <div class="header">
+        <h1>Whatsapp Automation</h1>
+        <img src="../static/whatsapp.png" alt="whatsapp img" width="80" height="80" style="display: inline;">
+      </div>
+    <h2>Which action do you want to perform</h2>
+    </div>
         <form action="/" method="POST">
-            <input class="btn btn-danger" type="radio" name="options" id="option1" value="1"> Attach Message </input><br>
-            <input class="btn btn-primary" type="radio" name="options" id="option2" value="2"> Attach Media File </input><br>
-            <input class="btn btn-primary" type="radio" name="options" id="option3" value="3"> Attach PDF File </input><br>
-            <input class="btn btn-primary" type="radio" name="options" id="option4" value="4"> Attach Message with Media File </input><br>
-            <input class="btn btn-primary" type="radio" name="options" id="option5" value="5"> Attach Message with PDF File </input><br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+            <label class="form-control">
+                <input type="radio" name="options" id="option1" value="1"/>
+                Attach Message
+              </label>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-control">
+                <input type="radio" name="options" id="option2" value="2"/>
+                Attach Media File
+              </label>
+            </div>
+            <div class="col-lg-4">
+              <label class="form-control">
+                <input type="radio" name="options" id="option3" value="3"/>
+                Attach PDF File
+              </label>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-4">
+              <label class="form-control">
+                <input type="radio" name="options" id="option4" value="4"/>
+                Attach Message with Media File 
+              </label>
+            </div>
+             <div class="col-lg-4">
+              <label class="form-control">
+                <input type="radio" name="options" id="option5" value="5"/>
+                Attach Message with PDF File
+              </label>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-lg" id="submit">Submit</button>
+     </form>
 
       </div>
     </div>

@@ -1,0 +1,82 @@
+input[type="radio"] {
+    -webkit-appearance: none;
+  }
+
+.form-control:hover {
+  color:green;
+  /* background-color: rgb(215, 255, 215); */
+  transition: 0.5s;
+}
+
+body{
+    background-color: #7ee8fa;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #a0ff95 80%);
+}
+
+label:focus-within {
+  outline: 4px solid rgb(2, 107, 0);
+  background-color: rgb(215, 255, 215); 
+  transition: 0.1s;
+  font-size: 2.5rem;
+}
+
+.form-control {
+    font-family: system-ui, sans-serif;
+    height: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: flex;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    height:100px;
+    width: auto;
+    margin: 30px 30px;
+}
+
+#submit {
+  align-items: center;
+  justify-content: center;
+  margin: 20px 45%;
+}
+
+h1,h2 {
+  margin: 20px 100px;
+  align-items: center;
+  font-weight: 600;
+}
+.jumbotron{
+  background-color: transparent;
+  margin:auto;
+}
+
+.header {
+  display: flex;
+}
+/* 
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+ */
+
+
+
+
