@@ -1,10 +1,9 @@
-# class return_path:
+# ************      PROGRAM TO RETURN DATA STORED FROM THE FORM
+
 def return_path(path):
 
     text_file = open("details.txt", "r")
     message = text_file.read().split("\n")
-        # print(message)
-
     c = 0
     for i in message:
         obj = i.split(" = ")

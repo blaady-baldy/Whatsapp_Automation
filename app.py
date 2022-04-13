@@ -8,6 +8,7 @@ app = Flask(__name__)
 choice = 0
 choice_for_name = 0
 
+# *************          INDEX ROUTE
 @app.route('/',methods=['POST','GET'])
 def index():
     if request.method=='POST':
@@ -20,9 +21,11 @@ def index():
     else:
         return render_template('index.html')
 
+# **************       RUNNING THE FLASK APP BY DEFAULT IN THE WEB BROWSER
 def open_browser():
       open_new('http://127.0.0.1:5000/')
 
+# **************      FORM TO ASK IF USER WANTS THE MESSAGE TO BE PERSONALISEZ (ADDING NAME TO THE MESSAGE)
 @app.route('/options',methods=['POST','GET'])
 def message():
     if request.method=='POST':
@@ -30,13 +33,14 @@ def message():
         choice_for_name=int(request.form['choices'])
         return render_template('form.html',choice=choice,choice_for_name=choice_for_name)
 
+# **************      FORM TO FILL OUT THE REQUIRED DETAILS, ASKING FILE PATHS AND MESSAGE
 @app.route('/form', methods=['POST','GET'])
 def form():
     if request.method=='POST':
         print(choice)
         print(choice_for_name)
         
-        # Writing all the filepaths in a text file for now
+        # Extracting all the details sent by the form 
         excel_filepath = request.form['excel_file']
         excel_filename = request.form['worksheet_name']
         column_name_of_contacts = request.form['contact_name']
@@ -54,7 +58,7 @@ def form():
         if choice_for_name == 1:
             column_name_of_names_stored = request.form['name_name']
         
-        # Writing in the text file
+        # Writing in the text file taking data from the form
         f = open("details.txt","w+")
         f.write("\nmedia_filepath = "+media_filepath)
         f.write("\npdf_filepath = "+pdf_filepath)
@@ -71,6 +75,7 @@ def form():
     else:
         return render_template('form.html')
 
+# ******************     RUNNING FLASK APP
 if __name__ == "__main__":
     Timer(1, open_browser).start();
     app.run(port=5000)

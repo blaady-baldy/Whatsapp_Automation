@@ -1,4 +1,3 @@
-from cgitb import text
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -7,8 +6,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from attachments.example import return_path
 from time import sleep
 from attachments.fetch_number import fetch_number
-# from pandas import *
-# import os
 
 class attach_message:
     def __init__(self, excel_data,name_column,contact_column,choice_for_name):
